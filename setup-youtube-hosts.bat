@@ -39,9 +39,9 @@ echo.>> "%HOSTS%"
 echo # zapret-discord-youtube YouTube DNS fix>> "%HOSTS%"
 type "%SOURCE%" >> "%HOSTS%"
 
-ipconfig /flushdns >nul
+"%SystemRoot%\System32\ipconfig.exe" /flushdns >nul
 echo Done. hosts updated.
 echo.
-nslookup youtube.com
+powershell -NoProfile -Command "try { Resolve-DnsName youtube.com -Type A -ErrorAction Stop | Select-Object Name,IPAddress } catch { Write-Host $_.Exception.Message }"
 echo.
 pause

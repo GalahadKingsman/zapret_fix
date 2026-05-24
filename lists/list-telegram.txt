@@ -1,0 +1,14 @@
+telegram.org
+telegram.me
+t.me
+api.telegram.org
+core.telegram.org
+my.telegram.org
+oauth.telegram.org
+td.telegram.org
+web.telegram.org
+telesco.pe
+cdn.telesco.pe
+tg.dev
+telegram.dog
+telegram.space

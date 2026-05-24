@@ -32,13 +32,11 @@ echo.
 netsh interface ipv4 set dns name="%ADAPTER%" static 8.8.8.8 validate=no
 netsh interface ipv4 add dns name="%ADAPTER%" 1.1.1.1 index=2 validate=no
 
-ipconfig /flushdns >nul
+"%SystemRoot%\System32\ipconfig.exe" /flushdns >nul
 
-echo --- Test via router DNS (was broken before) ---
-nslookup youtube.com
-echo.
-echo --- Test via Google DNS 8.8.8.8 (must resolve) ---
-nslookup youtube.com 8.8.8.8
+echo --- DNS test (PowerShell, works even if PATH is broken) ---
+powershell -NoProfile -Command ^
+  "Write-Host 'System DNS:'; try { Resolve-DnsName youtube.com -Type A -ErrorAction Stop | Select-Object -ExpandProperty IPAddress } catch { Write-Host $_.Exception.Message -ForegroundColor Red }; Write-Host ''; Write-Host 'Google DNS 8.8.8.8:'; try { Resolve-DnsName youtube.com -Type A -Server 8.8.8.8 -ErrorAction Stop | Select-Object -ExpandProperty IPAddress } catch { Write-Host $_.Exception.Message -ForegroundColor Red }"
 echo.
 
 findstr /I /C:"youtube.com" "%SystemRoot%\System32\drivers\etc\hosts" >nul 2>&1
