@@ -1,0 +1,294 @@
+﻿
+
+============================================================
+ZAPRET PROVIDER DIAGNOSTICS
+============================================================
+Generated: 2026-05-24T14:41:17.3498407+03:00
+Zapret state for this run: on
+Report file: C:\Users\Игорь\Desktop\дискорд мой\zapret_fix-main\utils\diagnostics\provider-report_on_2026-05-24_14-41-17.txt
+
+Share BOTH reports (off + on) when asking for a custom strategy.
+
+============================================================
+USER INPUT (fill manually if empty)
+============================================================
+Provider (e.g. Rostelecom, Dom.ru, MTS):
+City / region:
+Strategy .bat file used:
+Browser (Chrome / Firefox / Yandex / other):
+Does YouTube work WITHOUT zapret at all? (yes/no):
+Does Discord work WITH zapret? (yes/no):
+VPN tested for YouTube only? Result:
+
+============================================================
+ZAPRET INSTALL
+============================================================
+Version: 1.9.8c
+Install path: C:\Users\Игорь\Desktop\дискорд мой\zapret_fix-main
+IPSet filter: none
+Game filter: disabled
+winws.exe running: yes
+
+--- Service strategy (registry) ---
+No zapret service strategy in registry
+
+============================================================
+NETWORK / DNS
+============================================================
+
+--- ipconfig /all ---
+
+Windows IP Configuration
+
+   Host Name . . . . . . . . . . . . : GOLANG_GOD
+   Primary Dns Suffix  . . . . . . . : 
+   Node Type . . . . . . . . . . . . : Hybrid
+   IP Routing Enabled. . . . . . . . : No
+   WINS Proxy Enabled. . . . . . . . : No
+   DNS Suffix Search List. . . . . . : Dlink
+
+Ethernet adapter Ethernet:
+
+   Connection-specific DNS Suffix  . : Dlink
+   Description . . . . . . . . . . . : Realtek PCIe GbE Family Controller
+   Physical Address. . . . . . . . . : D8-43-AE-1D-69-55
+   DHCP Enabled. . . . . . . . . . . : Yes
+   Autoconfiguration Enabled . . . . : Yes
+   IPv6 Address. . . . . . . . . . . : fd01::aae5:a7a2:456f:88d1(Preferred) 
+   Temporary IPv6 Address. . . . . . : fd01::50fa:e2ba:9a5e:1d90(Preferred) 
+   Link-local IPv6 Address . . . . . : fe80::8f3e:1e49:7232:df2c%9(Preferred) 
+   IPv4 Address. . . . . . . . . . . : 192.168.0.4(Preferred) 
+   Subnet Mask . . . . . . . . . . . : 255.255.255.0
+   Lease Obtained. . . . . . . . . . : 24 ��� 2026 �. 14:37:44
+   Lease Expires . . . . . . . . . . : 25 ��� 2026 �. 14:37:43
+   Default Gateway . . . . . . . . . : fe80::eead:e0ff:fe1f:65b0%9
+                                       192.168.0.1
+   DHCP Server . . . . . . . . . . . : 192.168.0.1
+   DHCPv6 IAID . . . . . . . . . . . : 114836398
+   DHCPv6 Client DUID. . . . . . . . : 00-01-00-01-30-89-25-C0-D8-43-AE-1D-69-55
+   DNS Servers . . . . . . . . . . . : fe80::eead:e0ff:fe1f:65b0%9
+                                       192.168.0.1
+                                       fe80::eead:e0ff:fe1f:65b0%9
+   NetBIOS over Tcpip. . . . . . . . : Enabled
+   Connection-specific DNS Suffix Search List :
+                                       Dlink
+                                       Dlink
+
+--- DNS servers (IPv4) ---
+
+InterfaceAlias              InterfaceIndex AddressFamily ServerAddresses
+--------------              -------------- ------------- ---------------
+Ethernet                                 9 IPv4          {192.168.0.1}  
+Loopback Pseudo-Interface 1              1 IPv4          {}
+
+--- TCP global settings ---
+Querying active state...
+
+TCP Global Parameters
+----------------------------------------------
+Receive-Side Scaling State          : enabled 
+Receive Window Auto-Tuning Level    : normal 
+Add-On Congestion Control Provider  : default 
+ECN Capability                      : disabled 
+RFC 1323 Timestamps                 : enabled 
+Initial RTO                         : 1000 
+Receive Segment Coalescing State    : enabled 
+Non Sack Rtt Resiliency             : disabled 
+Max SYN Retransmissions             : 4 
+Fast Open                           : enabled 
+Fast Open Fallback                  : enabled 
+HyStart                             : enabled 
+Proportional Rate Reduction         : enabled 
+Pacing Profile                      : off
+
+============================================================
+DNS RESOLUTION
+============================================================
+
+--- nslookup www.youtube.com ---
+nslookup : *** UnKnown can't find www.youtube.com: Non-existent domain
+At C:\Users\Игорь\Desktop\дискорд мой\zapret_fix-main\utils\collect-provider-diagnostics.ps1:136 char:15
++     Try-Run { nslookup $h 2>&1 } "nslookup $h"
++               ~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (*** UnKnown can...existent domain:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+Server:  UnKnown
+Address:  fe80::eead:e0ff:fe1f:65b0
+
+--- nslookup youtube.com ---
+nslookup : *** UnKnown can't find youtube.com: Non-existent domain
+At C:\Users\Игорь\Desktop\дискорд мой\zapret_fix-main\utils\collect-provider-diagnostics.ps1:136 char:15
++     Try-Run { nslookup $h 2>&1 } "nslookup $h"
++               ~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (*** UnKnown can...existent domain:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+Server:  UnKnown
+Address:  fe80::eead:e0ff:fe1f:65b0
+
+--- nslookup googlevideo.com ---
+nslookup : Non-authoritative answer:
+At C:\Users\Игорь\Desktop\дискорд мой\zapret_fix-main\utils\collect-provider-diagnostics.ps1:136 char:15
++     Try-Run { nslookup $h 2>&1 } "nslookup $h"
++               ~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Non-authoritative answer::String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+Server:  UnKnown
+Address:  fe80::eead:e0ff:fe1f:65b0
+
+Name:    googlevideo.com
+Addresses:  2a00:1450:4001:c15::93
+	  2a00:1450:4001:c15::67
+	  2a00:1450:4001:c15::68
+	  2a00:1450:4001:c15::6a
+	  142.251.142.196
+
+--- nslookup redirector.googlevideo.com ---
+nslookup : Non-authoritative answer:
+At C:\Users\Игорь\Desktop\дискорд мой\zapret_fix-main\utils\collect-provider-diagnostics.ps1:136 char:15
++     Try-Run { nslookup $h 2>&1 } "nslookup $h"
++               ~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Non-authoritative answer::String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+Server:  UnKnown
+Address:  fe80::eead:e0ff:fe1f:65b0
+
+Name:    wide-youtube.l.google.com
+Addresses:  2a00:1450:4001:c21::c6
+	  142.250.27.198
+Aliases:  redirector.googlevideo.com
+
+--- nslookup i.ytimg.com ---
+nslookup : Non-authoritative answer:
+At C:\Users\Игорь\Desktop\дискорд мой\zapret_fix-main\utils\collect-provider-diagnostics.ps1:136 char:15
++     Try-Run { nslookup $h 2>&1 } "nslookup $h"
++               ~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Non-authoritative answer::String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+Server:  UnKnown
+Address:  fe80::eead:e0ff:fe1f:65b0
+
+Name:    i.ytimg.com
+Addresses:  2a00:1450:4010:c05::77
+	  2a00:1450:4010:c01::77
+	  2a00:1450:4010:c1e::77
+	  2a00:1450:4010:c02::77
+	  64.233.161.119
+	  142.251.1.119
+	  74.125.205.119
+	  64.233.162.119
+	  64.233.163.119
+	  64.233.164.119
+	  173.194.222.119
+	  173.194.221.119
+	  209.85.233.119
+	  108.177.14.119
+	  74.125.131.119
+	  142.250.150.119
+
+--- nslookup www.gstatic.com ---
+nslookup : Non-authoritative answer:
+At C:\Users\Игорь\Desktop\дискорд мой\zapret_fix-main\utils\collect-provider-diagnostics.ps1:136 char:15
++     Try-Run { nslookup $h 2>&1 } "nslookup $h"
++               ~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Non-authoritative answer::String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+Server:  UnKnown
+Address:  fe80::eead:e0ff:fe1f:65b0
+
+Name:    www.gstatic.com
+Addresses:  2a00:1450:4001:c13::5e
+	  173.194.221.94
+
+--- nslookup discord.com ---
+nslookup : Non-authoritative answer:
+At C:\Users\Игорь\Desktop\дискорд мой\zapret_fix-main\utils\collect-provider-diagnostics.ps1:136 char:15
++     Try-Run { nslookup $h 2>&1 } "nslookup $h"
++               ~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Non-authoritative answer::String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+Server:  UnKnown
+Address:  fe80::eead:e0ff:fe1f:65b0
+
+Name:    discord.com
+Addresses:  162.159.136.232
+	  162.159.135.232
+	  162.159.137.232
+	  162.159.138.232
+	  162.159.128.233
+
+============================================================
+CONNECTIVITY (HEAD requests, 10s timeout)
+============================================================
+https://www.youtube.com -> FAIL The remote name could not be resolved: 'www.youtube.com'
+https://www.google.com -> OK HTTP 200
+https://i.ytimg.com -> FAIL HTTP 404 Удаленный сервер возвратил ошибку: (404) Не найден.
+https://redirector.googlevideo.com -> FAIL HTTP 404 Удаленный сервер возвратил ошибку: (404) Не найден.
+https://www.gstatic.com -> FAIL HTTP 404 Удаленный сервер возвратил ошибку: (404) Не найден.
+https://discord.com -> OK HTTP 200
+https://www.cloudflare.com -> FAIL The operation has timed out.
+
+============================================================
+PING to resolved YouTube / Google CDN
+============================================================
+
+--- ping www.youtube.com (IPv4) ---
+ERROR: Exception calling "GetHostAddresses" with "1" argument(s): "No such host is known"
+
+--- ping redirector.googlevideo.com ---
+googlevideo IP: 64.233.165.198
+
+Pinging 64.233.165.198 with 32 bytes of data:
+Reply from 64.233.165.198: bytes=32 time=22ms TTL=101
+Reply from 64.233.165.198: bytes=32 time=22ms TTL=101
+Reply from 64.233.165.198: bytes=32 time=22ms TTL=101
+Reply from 64.233.165.198: bytes=32 time=22ms TTL=101
+
+Ping statistics for 64.233.165.198:
+    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 22ms, Maximum = 22ms, Average = 22ms
+
+============================================================
+TRACEROUTE (first 15 hops)
+============================================================
+
+--- tracert to YouTube IP ---
+ERROR: Exception calling "GetHostAddresses" with "1" argument(s): "No such host is known"
+
+============================================================
+LIST FILES (counts)
+============================================================
+list-google.txt : 24 lines
+list-general.txt : 49 lines
+list-exclude.txt : 93 lines
+ipset-all.txt : 1 lines
+
+============================================================
+BLOCKCHECK REMINDER
+============================================================
+Manual step (required for custom strategy):
+1. Stop zapret completely
+2. Download: https://github.com/bol-van/zapret-win-bundle
+3. Run blockcheck\blockcheck.cmd as Admin
+4. Domain: youtube.com
+5. Enable: HTTPS 1.2, HTTPS 1.3, HTTP3/QUIC
+6. Copy the FULL blockcheck output into a file named:
+   utils\diagnostics\blockcheck-youtube.txt
+7. Repeat for domain: googlevideo.com (if blockcheck allows)
+
+Also run service.bat -> Run Tests -> Standard tests with zapret ON,
+save the file from utils\test results\ and attach it.

@@ -1,0 +1,15 @@
+# YouTube DNS bypass for providers that return NXDOMAIN (Megafon / NetByNet / WIFIRE)
+# Append to C:\Windows\System32\drivers\etc\hosts as Administrator
+# IPs are Google edge; update if YouTube stops opening after DNS fix
+
+142.250.191.14 youtube.com
+142.250.191.14 www.youtube.com
+142.250.191.14 m.youtube.com
+142.250.191.14 music.youtube.com
+142.250.191.14 tv.youtube.com
+142.250.191.14 studio.youtube.com
+142.250.191.14 youtu.be
+142.250.191.14 youtubei.googleapis.com
+142.250.191.14 youtubeembeddedplayer.googleapis.com
+142.250.191.14 youtube-ui.l.google.com
+142.250.191.14 wide-youtube.l.google.com
