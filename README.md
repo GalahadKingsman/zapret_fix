@@ -38,14 +38,14 @@ Zapret обходит DPI, но **не чинит DNS**. Нужна связка
 Запустите **от имени администратора**:
 
 ```
-setup-megafon-orel.bat
+setup-megafon.bat
 ```
 
 Скрипт по порядку:
 
 1. Выставит DNS `8.8.8.8` / `1.1.1.1`
 2. Добавит записи YouTube в `hosts`
-3. Запустит стратегию `general (MEGAFON OREL).bat`
+3. Запустит стратегию `general (MEGAFON).bat`
 
 ### 3. Проверка
 
@@ -54,31 +54,16 @@ setup-megafon-orel.bat
 
 ---
 
-## Стратегии
+## Файлы
 
 | Файл | Назначение |
 |------|------------|
-| **`setup-megafon-orel.bat`** | Рекомендуется. YouTube + Discord |
-| **`general (MEGAFON OREL).bat`** | Только zapret (если DNS и hosts уже настроены) |
-| **`setup-megafon-all.bat`** | YouTube + Discord + Telegram (экспериментально) |
-| **`general Megafon ALL.bat`** | Запуск ALL-стратегии (короткое имя файла) |
-| **`general (MEGAFON ALL).bat`** | ALL-стратегия напрямую |
-
-### OREL vs ALL
-
-- **MEGAFON OREL** — проверенная база: стратегия ALT11 + фильтры Google/YouTube. **Используйте её**, если YouTube и Discord — главная цель.
-- **MEGAFON ALL** — OREL + фильтры Telegram (MTProto, порт 5222). Telegram Desktop на многих провайдерах **всё равно нестабилен** через zapret; см. раздел ниже.
-
----
-
-## Файлы настройки
-
-| Файл | Что делает |
-|------|------------|
-| `setup-dns-megafon.bat` | DNS `8.8.8.8` / `1.1.1.1` на активном адаптере |
-| `setup-youtube-hosts.bat` | Записи YouTube в `C:\Windows\System32\drivers\etc\hosts` |
-| `setup-telegram-hosts.bat` | Записи Telegram в `hosts` (опционально) |
-| `service.bat` | Менеджер службы, диагностика, автозапуск |
+| **`setup-megafon.bat`** | Рекомендуется. DNS + hosts + zapret одним скриптом |
+| **`general (MEGAFON).bat`** | Только zapret (если DNS и hosts уже настроены) |
+| **`general Megafon.bat`** | То же, имя без скобок (удобнее двойной клик) |
+| **`setup-dns-megafon.bat`** | Только DNS `8.8.8.8` / `1.1.1.1` |
+| **`setup-youtube-hosts.bat`** | Только записи YouTube в `hosts` |
+| **`service.bat`** | Менеджер службы, диагностика, автозапуск |
 
 ### Списки доменов и IP
 
@@ -86,19 +71,6 @@ setup-megafon-orel.bat
 |------|------------|
 | `lists/list-google.txt` | Домены Google/YouTube для DPI-обхода |
 | `lists/ipset-exclude-google.txt` | Исключение Google IP из общего ipset |
-| `lists/list-telegram.txt` | Домены Telegram (только для ALL) |
-| `lists/ipset-telegram.txt` | IP-сети дата-центров Telegram |
-
----
-
-## Telegram
-
-Официальный README zapret [рекомендует](https://github.com/Flowseal/zapret-discord-youtube#не-работает--telegram) для Desktop:
-
-- [tg-ws-proxy](https://github.com/Flowseal/tg-ws-proxy)
-- или MTProto-прокси в настройках Telegram
-
-Если нужен zapret + Telegram, попробуйте `setup-megafon-all.bat`, но **сначала** убедитесь, что OREL стабильно работает.
 
 ---
 
@@ -125,7 +97,7 @@ WinDivert не получил права на драйвер:
 
 ### `'--filter-udp' is not recognized`
 
-Командная строка слишком длинная (часто при установке в папку с **кириллицей** в пути). Перенесите zapret в `C:\zapret\` или используйте обновлённый `general (MEGAFON ALL).bat` с короткими путями.
+Командная строка слишком длинная (часто при установке в папку с **кириллицей** в пути). Перенесите zapret в `C:\zapret\`.
 
 ### Антивирус
 
@@ -140,14 +112,11 @@ zapret/
 ├── bin/                          ← winws.exe, WinDivert (из официального релиза)
 ├── lists/                        ← списки доменов и IP
 ├── .service/                     ← шаблоны hosts, version.txt
-├── setup-megafon-orel.bat        ← ★ начните отсюда
-├── setup-megafon-all.bat
+├── setup-megafon.bat             ← ★ начните отсюда
 ├── setup-dns-megafon.bat
 ├── setup-youtube-hosts.bat
-├── setup-telegram-hosts.bat
-├── general (MEGAFON OREL).bat    ← ★ основная стратегия
-├── general (MEGAFON ALL).bat
-├── general Megafon ALL.bat
+├── general (MEGAFON).bat         ← ★ основная стратегия
+├── general Megafon.bat
 ├── service.bat
 └── README.md
 ```
@@ -159,7 +128,7 @@ zapret/
 После проверки рабочей стратегии:
 
 1. `service.bat` → **Install Service**
-2. Выберите `general (MEGAFON OREL).bat` (или ALL)
+2. Выберите `general (MEGAFON).bat`
 
 ---
 
