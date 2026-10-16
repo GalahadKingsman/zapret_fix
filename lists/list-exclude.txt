@@ -37,6 +37,10 @@ riotgames.com
 riotcdn.net
 leagueoflegends.com
 playvalorant.com
+pubg.com
+playbattlegrounds.com
+krafton.com
+battleye.com
 marketplace.visualstudio.com
 gallery.vsassets.io
 gallerycdn.vsassets.io
